@@ -3,7 +3,7 @@ from django.db import models
 
 class Category(models.Model):
     name = models.CharField(verbose_name='Категория', max_length=100)
-
+    file = models.FileField(verbose_name='Файл', upload_to='file/category')
     class Meta:
         verbose_name = 'Категория'
         verbose_name_plural = 'Категории'
@@ -14,7 +14,7 @@ class Category(models.Model):
 
 class Chronology(models.Model):
     name = models.CharField(verbose_name='Название', max_length=100)
-    pub_date = models.DateField(auto_now=True, verbose_name='Дата')
+    pub_date = models.DateField(verbose_name='Дата')
     participants = models.CharField(verbose_name='Участники', max_length=100)
     organizer = models.CharField(verbose_name='Организатор', max_length=50)
     description = models.TextField(verbose_name='Описание')
@@ -34,6 +34,14 @@ class Administration(models.Model):
     fullname = models.CharField(verbose_name='Ф.И.О', max_length=100)
     lesson = models.CharField(verbose_name='Предмет', max_length=50)
     position = models.CharField(verbose_name='Должность', max_length=50)
+
+    def __str__(self) -> str:
+        return self.fullname
+
+
+    class Meta:
+            verbose_name = 'Администрация'
+            verbose_name_plural = 'Администрация'
 
 
 class Accreditation(models.Model):
