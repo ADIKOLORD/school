@@ -1,4 +1,3 @@
-from django.shortcuts import render
 from rest_framework import generics
 
 from .serializers import CategorySerializers, ChronologySerializers, AccreditationSerializers, TeacherSerializers
@@ -14,7 +13,12 @@ class CategoryDeleteView(generics.DestroyAPIView):
     serializer_class = CategorySerializers
     queryset = Category.objects.all()
     
-    
+
+class CategoryDetailView(generics.RetrieveAPIView):
+    queryset = Category.objects.all()
+    serializer_class = CategorySerializers
+
+   
 class ChronologyCreateListView(generics.ListCreateAPIView):
     serializer_class = ChronologySerializers
     queryset = Chronology.objects.all()
@@ -34,7 +38,12 @@ class AccreditationDeleteView(generics.DestroyAPIView):
     serializer_class = AccreditationSerializers
     queryset = Accreditation.objects.all()
     
-    
+
+class AccreditationDetailView(generics.RetrieveAPIView):
+    queryset = Category.objects.all()
+    serializer_class = CategorySerializers
+
+  
 class TeacherCreateListView(generics.ListCreateAPIView):
     serializer_class = TeacherSerializers
     queryset = Teacher.objects.all()

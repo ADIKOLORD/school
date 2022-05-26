@@ -1,3 +1,4 @@
+from re import T
 from django.db import models
 
 
@@ -17,7 +18,8 @@ class Chronology(models.Model):
     pub_date = models.DateField(verbose_name='Дата')
     participants = models.CharField(verbose_name='Участники', max_length=100)
     organizer = models.CharField(verbose_name='Организатор', max_length=50)
-    description = models.TextField(verbose_name='Описание')
+    description = models.TextField(verbose_name='Вверхние описание')
+    description_info = models.TextField(verbose_name='Нижнее описание', blank=True)
     url_video = models.URLField(verbose_name='Добавление ссылок на видео', max_length=200, blank=True, null=True)
     image = models.ImageField(verbose_name='Фото', upload_to='Хронология/', max_length=200, blank=True, null=True)
 
