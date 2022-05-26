@@ -40,9 +40,9 @@ class AccreditationDeleteView(generics.DestroyAPIView):
     
 
 class AccreditationDetailView(generics.RetrieveAPIView):
-    queryset = Category.objects.all()
-    serializer_class = CategorySerializers
-
+    serializer_class = AccreditationSerializers
+    queryset = Accreditation.objects.all()
+    
   
 class TeacherCreateListView(generics.ListCreateAPIView):
     serializer_class = TeacherSerializers
