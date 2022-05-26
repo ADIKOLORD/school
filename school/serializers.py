@@ -1,6 +1,5 @@
-from msilib.schema import File
 from rest_framework import serializers
-from .models import Administration, Category, Chronology, Accreditation, Teacher
+from .models import Administration, File, Category, Chronology, Accreditation, Teacher
 
 
 class CategorySerializers(serializers.ModelSerializer):
