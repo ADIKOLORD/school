@@ -3,13 +3,14 @@ from django.urls import path, include
 from rest_framework_swagger.views import get_swagger_view
 from django.conf.urls.static import static
 
-from school.views import AdministrationAPIViewSet
+from school.views import AdministrationAPIViewSet, FileAPIViewSet
 from .yasg import urlpatterns as doc_urls
 from . import settings
 from rest_framework.routers import DefaultRouter
 
 router = DefaultRouter()
 router.register('administration', AdministrationAPIViewSet)
+router.register('files', FileAPIViewSet)
 
 schema_view = get_swagger_view(title='Pastebin API')
 

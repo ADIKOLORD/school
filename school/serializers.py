@@ -1,3 +1,4 @@
+from msilib.schema import File
 from rest_framework import serializers
 from .models import Administration, Category, Chronology, Accreditation, Teacher
 
@@ -33,3 +34,9 @@ class AdministrationSerializer(serializers.ModelSerializer):
     class Meta:
         model = Administration
         fields = '__all__'
+
+class FileSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = File
+        fields = '__all__'
+    

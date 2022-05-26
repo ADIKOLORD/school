@@ -1,7 +1,7 @@
 from rest_framework import generics
 from rest_framework.viewsets import ModelViewSet
-from .serializers import AdministrationSerializer, CategorySerializers, ChronologySerializers, AccreditationSerializers, TeacherSerializers
-from .models import Administration, Category, Chronology, Accreditation, Teacher
+from .serializers import AdministrationSerializer, CategorySerializers, ChronologySerializers, AccreditationSerializers, FileSerializer, TeacherSerializers
+from .models import Administration, File, Category, Chronology, Accreditation, Teacher
 
 
 class CategoryCreateListView(generics.ListCreateAPIView):
@@ -63,3 +63,7 @@ class TeacherDeleteView(generics.DestroyAPIView):
 class AdministrationAPIViewSet(ModelViewSet):
     queryset = Administration.objects.all()
     serializer_class = AdministrationSerializer
+
+class FileAPIViewSet(ModelViewSet):
+    queryset = File.objects.all()
+    serializer_class = FileSerializer
