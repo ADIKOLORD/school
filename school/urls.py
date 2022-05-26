@@ -1,6 +1,8 @@
 from django.urls import path
 from .views import CategoryCreateListView, ChronologyCreateListView, AccreditationCreateListView, TeacherCreateListView, \
 CategoryDeleteView, ChronologyDeleteView, AccreditationDeleteView, TeacherDeleteView, AccreditationDetailView, CategoryDetailView
+
+
 urlpatterns = [
     path('category/', CategoryCreateListView.as_view()),
     path('category/delete/<int:pk>/', CategoryDeleteView.as_view()),

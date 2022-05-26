@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Category, Chronology, Accreditation, Teacher
+from .models import Administration, Category, Chronology, Accreditation, Teacher
 
 
 class CategorySerializers(serializers.ModelSerializer):
@@ -27,4 +27,9 @@ class TeacherSerializers(serializers.ModelSerializer):
     
     class Meta:
         model = Teacher
+        fields = '__all__'
+
+class AdministrationSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Administration
         fields = '__all__'
