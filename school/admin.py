@@ -8,7 +8,8 @@ class FileInlines(admin.TabularInline):
 
 
 class AccreditationAdmin(admin.ModelAdmin):
-    inlines = [FileInlines]
+    filter_horizontal = ['files',]
+    
 
 
 class AdministrationAdmin(admin.ModelAdmin):
@@ -18,4 +19,5 @@ admin.site.register(Category)
 admin.site.register(Accreditation, AccreditationAdmin)
 admin.site.register(Chronology)
 admin.site.register(Teacher)
+admin.site.register(File)
 admin.site.register(Administration, AdministrationAdmin)

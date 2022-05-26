@@ -1,3 +1,4 @@
+from operator import mod
 from re import T
 from django.db import models
 
@@ -26,6 +27,12 @@ class Chronology(models.Model):
     class Meta:
         verbose_name = 'Хронология'
         verbose_name_plural = 'Хронология'
+    
+    def save(self, *args, **kwargs):
+        if not self.url_video and not self.image:
+            raise ValueError('Хотя бы один заполни!')
+        else:
+            super().save(*args, **kwargs)
 
     def __str__(self):
         return self.name
@@ -53,7 +60,7 @@ class Accreditation(models.Model):
     )
     which_accred = models.CharField(max_length=20, choices=PARENT_ACCRE, verbose_name='Аккредитация')
     name = models.CharField(verbose_name='Название события', max_length=100)
-
+    files = models.ManyToManyField('File', verbose_name='Файлы', null=True, blank=True)
 
     class Meta:
         verbose_name = 'Аккредитация'
@@ -64,12 +71,15 @@ class Accreditation(models.Model):
 
 
 class File(models.Model):
-    name = models.ForeignKey(Accreditation, on_delete=models.CASCADE)
     name_file = models.CharField(verbose_name='Название файла', max_length=64)
     file = models.FileField(verbose_name='Подпункты (ссылка на док)необязательное поле', upload_to='file/accreditation')
 
-    def __str__(self):
-        return f'{self.name}'f'{self.name_file}'f'{self.file}'
+    def __str__(self) -> str:
+        return self.name_file
+
+    class Meta:
+        verbose_name = 'Файл'
+        verbose_name_plural = 'Файлы'
 
 
 class Teacher(models.Model):
