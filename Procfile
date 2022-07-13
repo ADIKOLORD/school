@@ -4,8 +4,7 @@ f
 ff
 ff
 ffff
-ffffff
-fff
+fffffff
 fffff
 fffff
 ff
