@@ -8,8 +8,7 @@ fffd
 ffffffdf
 fff
 fdffff
-fffff
-ffafdffdff
+ffffff
 fff
 ffff
 f
