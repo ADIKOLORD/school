@@ -7,8 +7,7 @@ aaff
 fffdfffff
 ffffffdffa
 fffaaaff
-ffffffa
-ffffffffff
+ffffffaa
 fffffaaa
 ffffa
 faaa
