@@ -6,7 +6,7 @@ ffa
 ffff
 fffffffa
 ffffff
-fffff
+ffffff
 ffa
 fff
 ffa
