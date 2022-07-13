@@ -9,7 +9,6 @@ ffffffdffa
 fffaaaff
 ffffffa
 ffffffffff
-fffffaa
-ffffra
+fffffaaa
 ffffa
 faaa
